@@ -224,34 +224,96 @@ h1 {
   cursor: pointer;
 }
 
-@media (max-width: 460px) {
-  h1 {
-    font-size: 42px;
+@media (max-width: 600px) {
+  body {
+    place-items: start center;
   }
 
-  .row {
-    grid-template-columns: repeat(5, 52px);
+  .game {
+    width: 100%;
+    padding: 18px 10px 24px;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .message {
+    margin-bottom: 10px;
+  }
+
+  .rules {
+    gap: 10px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .board {
     gap: 6px;
   }
 
+  .row {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    width: min(92vw, 330px);
+  }
+
   .tile {
-    width: 52px;
-    height: 52px;
-    font-size: 28px;
+    width: auto;
+    height: auto;
+    aspect-ratio: 1;
+    font-size: 26px;
   }
 
   .guess-form {
+    width: min(92vw, 330px);
+    margin-top: 16px;
     grid-template-columns: 1fr;
   }
 
+  .guess-form input {
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .guess-form button,
+  .new-game-button {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .keyboard {
+    width: 100%;
+    margin-top: 18px;
+    gap: 6px;
+  }
+
+  .keyboard-row {
+    gap: 4px;
+  }
+
   .key {
-    width: 28px;
-    height: 38px;
+    width: 8.5vw;
+    max-width: 34px;
+    min-width: 24px;
+    height: 40px;
     font-size: 12px;
   }
 
   .action-key {
-    width: 54px;
-    font-size: 11px;
+    width: 14vw;
+    max-width: 58px;
+    min-width: 44px;
+    font-size: 10px;
+  }
+
+  .modal-box {
+    width: min(88vw, 340px);
+  }
+
+  .modal-message {
+    font-size: 24px;
   }
 }
