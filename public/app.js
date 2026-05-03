@@ -96,6 +96,7 @@ function showModal(text) {
   modal.classList.remove("hidden");
 }
 
+
 function getRandomAnswer() {
   const randomIndex = Math.floor(Math.random() * answers.length);
   return answers[randomIndex];
@@ -123,6 +124,33 @@ function updateKey(letter, result) {
     }
   }
 }
+
+for (let key of keys) {
+  key.addEventListener("click", () => {
+    if (gameOver) {
+      return;
+    }
+
+    const action = key.dataset.action;
+
+    if (action === "enter") {
+      form.requestSubmit();
+      return;
+    }
+
+    if (action === "backspace") {
+      input.value = input.value.slice(0, -1);
+      input.dispatchEvent(new Event("input"));
+      return;
+    }
+
+    if (input.value.length < wordLength) {
+      input.value = input.value + key.textContent;
+      input.dispatchEvent(new Event("input"));
+    }
+  });
+}
+
 
 function scoreGuess(guess) {
   const result = ["wrong", "wrong", "wrong", "wrong", "wrong"];
@@ -162,14 +190,14 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (gameOver) {
-    showMessage("Game is already over. Click New Game.");
+    showModal("Game is already over! Click New Game");
     return;
   }
 
   const guess = input.value.toUpperCase();
 
   if (guess.length !== wordLength) {
-    showMessage("Guess must be 5 letters.");
+    showModal("Guess must be 5 letters");
     return;
   }
 
@@ -191,7 +219,7 @@ form.addEventListener("submit", (event) => {
 
   if (guess === answer) {
     gameOver = true;
-    showMessage("Correct!");
+    showModal("CORRECT!");
     input.value = "";
     return;
   }
@@ -227,8 +255,12 @@ newGameButton.addEventListener("click", () => {
 
 modalButton.addEventListener("click", () => {
   modal.classList.add("hidden");
-  newGameButton.click();
+
+  if (gameOver) {
+    newGameButton.click();
+  }
 });
+
 
 //pink idea
 // const form = document.querySelector(".guess-form");

@@ -104,11 +104,16 @@ h1 {
   color: white;
 }
 
-.tile.wrong,
-.key.wrong {
+.tile.wrong {
   background: #555b52;
   border-color: #555b52;
   color: white;
+}
+
+.key.wrong {
+  background: #2d312b;
+  border-color: #2d312b;
+  color: #8f978c;
 }
 
 .guess-form {
@@ -163,7 +168,7 @@ h1 {
 .key {
   width: 34px;
   height: 42px;
-  background: #333833;
+  background: #6f756b;
   color: white;
   display: grid;
   place-items: center;
@@ -171,33 +176,12 @@ h1 {
   font-weight: 900;
   border-radius: 5px;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
-@media (max-width: 460px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  .row {
-    grid-template-columns: repeat(5, 52px);
-    gap: 6px;
-  }
-
-  .tile {
-    width: 52px;
-    height: 52px;
-    font-size: 28px;
-  }
-
-  .guess-form {
-    grid-template-columns: 1fr;
-  }
-
-  .key {
-    width: 28px;
-    height: 38px;
-    font-size: 12px;
-  }
+.action-key {
+  width: 64px;
+  font-size: 12px;
 }
 
 .modal {
@@ -240,3 +224,34 @@ h1 {
   cursor: pointer;
 }
 
+@media (max-width: 460px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  .row {
+    grid-template-columns: repeat(5, 52px);
+    gap: 6px;
+  }
+
+  .tile {
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+  }
+
+  .guess-form {
+    grid-template-columns: 1fr;
+  }
+
+  .key {
+    width: 28px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .action-key {
+    width: 54px;
+    font-size: 11px;
+  }
+}
