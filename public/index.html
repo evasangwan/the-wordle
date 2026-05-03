@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The Wordle :P</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="game">
+      <h1>The Wordle :P</h1>
+      <p class="message"></p>
+
+    <div class="rules">
+  <span class="rule green"></span> correct spot
+  <span class="rule yellow"></span> wrong spot
+  <span class="rule gray"></span> not in word
+</div>
+
+      <section class="board">
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="row">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+</section>
+
+<form class="guess-form">
+  <input type="text" maxlength="5" placeholder="guess">
+  <button type="submit">Enter</button>
+</form>
+
+<button class="new-game-button">New Game</button>
+
+<section class="keyboard">
+  <div class="keyboard-row">
+    <span class="key">Q</span>
+    <span class="key">W</span>
+    <span class="key">E</span>
+    <span class="key">R</span>
+    <span class="key">T</span>
+    <span class="key">Y</span>
+    <span class="key">U</span>
+    <span class="key">I</span>
+    <span class="key">O</span>
+    <span class="key">P</span>
+  </div>
+
+  <div class="keyboard-row">
+    <span class="key">A</span>
+    <span class="key">S</span>
+    <span class="key">D</span>
+    <span class="key">F</span>
+    <span class="key">G</span>
+    <span class="key">H</span>
+    <span class="key">J</span>
+    <span class="key">K</span>
+    <span class="key">L</span>
+  </div>
+
+  <div class="keyboard-row">
+    <span class="key">Z</span>
+    <span class="key">X</span>
+    <span class="key">C</span>
+    <span class="key">V</span>
+    <span class="key">B</span>
+    <span class="key">N</span>
+    <span class="key">M</span>
+  </div>
+</section>
+
+
+    </main>
+    <div class="modal hidden">
+  <div class="modal-box">
+    <p class="modal-message"></p>
+    <button class="modal-button">Play Again</button>
+  </div>
+</div>
+    <script src="/app.js"></script>
+  </body>
+</html>
