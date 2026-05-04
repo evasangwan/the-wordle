@@ -231,62 +231,57 @@ h1 {
 
   .game {
     width: 100%;
-    padding: 18px 10px 24px;
+    min-height: 100vh;
+    padding: 14px 8px 20px;
   }
 
   h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-size: 34px;
+    margin-bottom: 8px;
   }
 
   .message {
-    margin-bottom: 10px;
+    min-height: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
   }
 
   .rules {
-    gap: 10px;
-    font-size: 12px;
-    margin-bottom: 14px;
+    gap: 8px;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .rule {
+    width: 11px;
+    height: 11px;
   }
 
   .board {
-    gap: 6px;
+    gap: 5px;
   }
 
   .row {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 6px;
-    width: min(92vw, 330px);
+    gap: 5px;
+    width: min(90vw, 310px);
   }
 
   .tile {
     width: auto;
     height: auto;
     aspect-ratio: 1;
-    font-size: 26px;
+    font-size: 24px;
+    border-radius: 5px;
   }
 
   .guess-form {
-    width: min(92vw, 330px);
-    margin-top: 16px;
-    grid-template-columns: 1fr;
-  }
-
-  .guess-form input {
-    padding: 12px;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .guess-form button,
-  .new-game-button {
-    padding: 12px 16px;
-    font-size: 16px;
+    display: none;
   }
 
   .keyboard {
     width: 100%;
-    margin-top: 18px;
+    margin-top: 14px;
     gap: 6px;
   }
 
@@ -295,25 +290,40 @@ h1 {
   }
 
   .key {
-    width: 8.5vw;
+    width: 8.4vw;
     max-width: 34px;
-    min-width: 24px;
-    height: 40px;
+    min-width: 25px;
+    height: 42px;
     font-size: 12px;
+    border-radius: 5px;
+    user-select: none;
   }
 
   .action-key {
     width: 14vw;
     max-width: 58px;
-    min-width: 44px;
+    min-width: 46px;
     font-size: 10px;
   }
 
+  .new-game-button {
+    margin-top: 16px;
+    padding: 12px 16px;
+    font-size: 15px;
+    width: min(90vw, 310px);
+  }
+
   .modal-box {
-    width: min(88vw, 340px);
+    width: min(88vw, 330px);
+    padding: 24px 20px;
   }
 
   .modal-message {
     font-size: 24px;
   }
+}
+
+
+.guess-form {
+  display: none;
 }
